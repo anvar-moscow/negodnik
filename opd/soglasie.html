@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEGODNIK - Согласие на обработку персональных данных</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <style>
+        :root {
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --text-dark: #212121;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            /* Исправление: предотвращаем горизонтальный скролл */
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            /* Исправление: гарантируем, что контейнер не превышает ширину вьюпорта */
+            overflow: hidden;
+        }
+        
+        /* Шапка */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Исправление: гарантируем, что шапка не превышает ширину вьюпорта */
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            font-family: 'Unbounded', cursive;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .header-phone i {
+            margin-right: 8px;
+            color: var(--accent-red);
+        }
+        
+        .header-telegram {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .header-telegram i {
+            margin-right: 8px;
+            color: var(--accent-red);
+        }
+        
+        .header-phone:hover, .header-telegram:hover {
+            color: var(--accent-red);
+        }
+        
+        /* Секция статьи */
+        .article {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .article-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-red);
+            border-radius: 3px;
+        }
+        
+        .article-date {
+            color: var(--dark-gray);
+            font-size: 1rem;
+        }
+        
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+        }
+        
+        .article-content h2,
+        .article-content h3 {
+            color: var(--accent-red);
+            margin: 40px 0 20px;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+        }
+        
+        .article-content blockquote {
+            border-left: 5px solid var(--accent-red);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+
+        /* Кнопка возврата */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            color: var(--text-dark);
+            transform: translateX(-5px);
+        }
+        
+        /* Футер */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent-red);
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-contacts {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+        }
+
+        /* НОВЫЙ МЕДИА-ЗАПРОС ДЛЯ ЭКРАНОВ МЕНЬШЕ 430px */
+        @media (max-width: 430px) {
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
+            
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-contacts {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .logo {
+                font-size: 28px;
+            }
+            
+            .article {
+                padding: 40px 0;
+            }
+            
+            .article-title {
+                font-size: 1.6rem;
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+            
+            .article-title:after {
+                width: 70px;
+                height: 4px;
+            }
+            
+            .article-date {
+                font-size: 0.9rem;
+            }
+            
+            .article-content {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .article-content p {
+                margin-bottom: 20px;
+            }
+            
+            .article-content h2,
+            .article-content h3 {
+                margin: 30px 0 15px;
+                font-size: 1.3rem;
+            }
+            
+            .article-content ul,
+            .article-content ol {
+                padding-left: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .article-content li {
+                margin-bottom: 8px;
+            }
+            
+            .article-content blockquote {
+                padding-left: 15px;
+                margin: 20px 0;
+            }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+            
+            .footer-bottom {
+                padding-top: 20px;
+            }
+            
+            .footer-bottom p {
+                font-size: 0.8rem;
+            }
+            
+            .footer-bottom a {
+                padding: 3px 6px;
+                margin: 0 2px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    NEGODNIK
+                </div>
+                <div class="header-contacts">
+                    <a href="tel:+79536890711" class="header-phone">
+                        <i class="fas fa-phone"></i> +7 953 689-07-11
+                    </a>
+                    <a href="https://t.me/biletdima" class="header-telegram">
+                        <i class="fab fa-telegram"></i> @biletdima
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="article">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-button">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            
+            <div class="article-header">
+                <h1 class="article-title">Согласие на обработку персональных данных</h1>
+                <div class="article-date">Киров, 2025</div>
+            </div>
+            
+            <div class="article-content">
+                <p>Оставляя на сайте, размещенном по веб-адресу: <strong>negodnik-help.ru</strong> (далее – Сайт), принадлежащем ИП Горошников Дмитрий Сергеевич, ИНН 433803080866, оператор персональных данных (далее - Администрация Сайта), любые из Ваших данных (которые отнесены к категории персональных в соответствии с ФЗ «О персональных данных» от 27.07.2006 №152-ФЗ), путем заполнения полей любых форм на Сайте, Вы автоматически присоединяетесь к настоящему Соглашению, приобретаете статус пользователя Сайта (далее - Пользователь Сайта) и соглашаетесь со всеми без исключения его условиями.</p>
+                
+                <p><strong>Пользователь Сайта:</strong></p>
+                <ol>
+                    <li>Подтверждает, что все указанные им в формах регистрации на Сайте данные принадлежат лично ему, соответствуют действительности, не искажены.</li>
+                    <li>Подтверждает и признает, что им внимательно в полном объеме прочитано настоящее Соглашение и условия обработки его персональных данных. Текст Соглашения и условия обработки персональных данных ему понятны и он с ними согласен;</li>
+                    <li>Дает согласие на обработку Администрацией Сайта предоставляемых в составе информации персональных данных в целях заключения между ним и Сайтом настоящего Соглашения, а также его последующего исполнения;</li>
+                    <li>Выражает согласие с условиями обработки персональных данных без оговорок и ограничений.</li>
+                    <li>В соответствии с ФЗ «О персональных данных» от 27.07.2006 №152-ФЗ свободно, своей волей и в своем интересе выражает согласие на сбор, анализ, обработку, хранение и использование своих персональных данных (ФИО, дата рождения, паспортные данные, места пребывания, адрес проживания, мобильный телефон, домашний телефон, электронный адрес (E-mail), реквизиты банковских карт, IP адрес и прочие данные). Согласие Пользователя Сайта на обработку персональных данных является конкретным, информированным и сознательным.</li>
+                </ol>
+                
+                <p>Настоящее согласие Пользователя Сайта признается исполненным в простой письменной форме.</p>
+                
+                <p><strong>Пользователь Сайта предоставляет Администрации Сайта право осуществлять следующие действия (операции) с персональными данными:</strong></p>
+                <ol>
+                    <li>сбор и накопление;</li>
+                    <li>хранение в течение установленных нормативными документами сроков хранения отчетности, но не менее трех лет, с момента даты прекращения пользования услуг Пользователем Сайта;</li>
+                    <li>уточнение (обновление, изменение);</li>
+                    <li>извлечение;</li>
+                    <li>использование</li>
+                    <li>уничтожение;</li>
+                    <li>обезличивание;</li>
+                    <li>передача по требованию суда, в том числе, третьим лицом, с соблюдением мер, обеспечивающих защиту персональных данных от несанкционированного доступа.</li>
+                </ol>
+                
+                <p>Указанное согласие действует бессрочно с момента предоставления данных и может быть отозвано Пользователем Сайта путем подачи заявления Администрации Сайта с указанием данных, определенных ст. 14 Федерального закона от 27.07.2006 N 152-ФЗ «О персональных данных» (ред. от 22.02.2017г.).</p>
+                
+                <p>Отзыв согласия на обработку персональных данных может быть осуществлен путем направления Пользователем соответствующего распоряжения в простой письменной форме на адрес электронной почты <strong>zimlinlip1994@gmail.com</strong></p>
+                
+                <p>Администрация Сайта не несет ответственности за использование (как правомерное, так и неправомерное) третьими лицами Информации, размещенной Пользователем Сайта на Сайте, включая её воспроизведение и распространение, осуществленные всеми возможными способами.</p>
+                
+                <p>Администрация Сайта в любое время имеет право вносить изменения в настоящее Соглашение.</p>
+                
+                <p>При внесении изменений в актуальной редакции указывается дата последнего обновления. Новая редакция Соглашения вступает в силу с момента ее размещения, если иное не предусмотрено новой редакции Соглашения.</p>
+                
+                <p>К настоящему Соглашению и отношениям между Пользователем Сайта и Администрации Сайта, возникающим в связи с применением Соглашения, подлежит применению действующее законодательство Российской Федерации.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Реквизиты</h3>
+                    <p>ИП Горошников Дмитрий Сергеевич</p>
+                    <p>ИНН 433803080866</p>
+                    <p>ОГРН 320435000028490</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 953 689 0711</p>
+                    <p>9:00 - 19:00</p>
+                    <p>г. Киров</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+				<p style="text-align: center; margin: 20px 0; color: white; font-family: 'Montserrat', sans-serif;">
+					<a href="https://negodnik-help.ru/opd/opd.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Политика ОПД</a> | 
+					<a href="https://negodnik-help.ru/opd/soglasie.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Согласие ОПД</a> | 
+					<a href="https://negodnik-help.ru/opd/dogovor.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Пример договора</a> | 
+					<a href="https://negodnik-help.ru/index.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">На главную</a>
+				</p>
+				<p><strong>NEGODNIK © 2017-2025</strong></p>
+            </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
