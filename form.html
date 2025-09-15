@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заявки - NEGODNIK</title>
+    <!-- Подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --white: #ffffff;
+            --accent-red: #d32f2f;
+            --text-dark: #212121;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #424242;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            overflow: visible;
+        }
+
+        /* Шапка */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent-red);
+            display: flex;
+            align-items: center;
+            font-family: 'Unbounded', cursive;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .header-phone i {
+            margin-right: 8px;
+            color: var(--accent-red);
+        }
+
+        .header-telegram {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .header-telegram i {
+            margin-right: 8px;
+            color: var(--accent-red);
+        }
+
+        .header-phone:hover, .header-telegram:hover {
+            color: var(--accent-red);
+        }
+
+        /* Форма */
+        .form-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .form-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--accent-red);
+        }
+
+        .form-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--accent-red);
+            border-radius: 3px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent-red);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+        }
+
+        .submit-button {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            transition: all 0.4s;
+            box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+            text-transform: uppercase;
+            font-family: 'Unbounded', cursive;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .submit-button:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(211, 47, 47, 0.4);
+        }
+
+        .consent-text {
+            text-align: center;
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 0;
+        }
+
+        .consent-text a {
+            color: var(--accent-red);
+            text-decoration: none;
+        }
+
+        .consent-text a:hover {
+            text-decoration: underline;
+        }
+
+        .phone-hint {
+            color: var(--dark-gray);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Модальные окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .modal h3 {
+            margin-top: 0;
+            color: var(--accent-red);
+            font-family: 'Unbounded', cursive;
+            margin-bottom: 20px;
+        }
+
+        .modal p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .close-button {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .close-button:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Футер */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent-red);
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header-contacts {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .form-title {
+                font-size: 1.8rem;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .form-section {
+                padding: 40px 0;
+            }
+            
+            .form-title {
+                font-size: 1.6rem;
+            }
+            
+            input, textarea {
+                padding: 12px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    NEGODNIK
+                </div>
+                <div class="header-contacts">
+                    <a href="tel:+79536890711" class="header-phone">
+                        <i class="fas fa-phone"></i> +7 953 689-07-11
+                    </a>
+                    <a href="https://t.me/biletdima" class="header-telegram">
+                        <i class="fab fa-telegram"></i> @biletdima
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Секция с формой -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Оставьте заявку</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" pattern="\+7\s?[\(][0-9]{3}[\)]\s?[0-9]{3}[-][0-9]{2}[-][0-9]{2}" required>
+                        <div class="phone-hint">Формат: +7 (XXX) XXX-XX-XX</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="secondContact">Дополнительный контакт (Telegram/Email):</label>
+                        <input type="text" id="secondContact" name="secondContact" placeholder="@username или example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="situation">Описание ситуации:</label>
+                        <textarea id="situation" name="situation" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Отправить заявку</button>
+                    <p class="consent-text">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с <a href="https://negodnik-help.ru/opd/soglasie.html" target="_blank">политикой конфиденциальности</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальные окна -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Успех!</h3>
+            <p>Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.</p>
+            <div class="modal-buttons">
+                <a href="https://negodnik-help.ru" class="close-button">НА ГЛАВНУЮ</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <h3>Ошибка</h3>
+            <p>Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.</p>
+            <button class="close-button" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Реквизиты</h3>
+                    <p>ИП Горошников Дмитрий Сергеевич</p>
+                    <p>ИНН 433803080866</p>
+                    <p>ОГРН 320435000028490</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 953 689 0711</p>
+                    <p>9:00 - 19:00</p>
+                    <p>г. Киров</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="text-align: center; margin: 20px 0; color: white; font-family: 'Montserrat', sans-serif;">
+                    <a href="https://negodnik-help.ru/opd/opd.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Политика ОПД</a> | 
+                    <a href="https://negodnik-help.ru/opd/soglasie.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Согласие ОПД</a> | 
+                    <a href="https://negodnik-help.ru/opd/dogovor.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Пример договора</a> | 
+                    <a href="https://negodnik-help.ru/index.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">На главную</a>
+                </p>
+                <p><strong>NEGODNIK © 2017-2025</strong></p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // Маска для телефона
+    document.getElementById('phone').addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+        if (!x[1] && x[2]) {
+            e.target.value = '+7 (' + x[2];
+        } else if (!x[3]) {
+            e.target.value = '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '');
+        } else {
+            e.target.value = '+7 (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        }
+    });
+
+    // Валидация формы - хотя бы одно контактное поле должно быть заполнено
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const phone = document.getElementById('phone').value;
+        const secondContact = document.getElementById('secondContact').value;
+        
+        if (!phone && !secondContact) {
+            alert('Пожалуйста, заполните хотя бы одно контактное поле (телефон или дополнительный контакт)');
+            return;
+        }
+        
+        submitForm();
+    });
+
+function submitForm() {
+    // 1. Получаем данные формы
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const secondContact = document.getElementById('secondContact').value;
+    const situation = document.getElementById('situation').value;
+
+    // Показываем индикатор загрузки
+    const submitButton = document.querySelector('.submit-button');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Отправка...';
+    submitButton.disabled = true;
+
+    // 2. Отправляем данные на наш сервер
+    fetch('https://api.negodnik-help.ru/send-to-telegram', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            phone: phone,
+            secondContact: secondContact,
+            situation: situation
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showModal('success');
+            document.getElementById('contactForm').reset();
+        } else {
+            console.error('Ошибка сервера:', data.error);
+            alert('Ошибка: ' + (data.error || 'Неизвестная ошибка сервера'));
+        }
+    })
+    .catch((error) => {
+        console.error('Ошибка сети или запроса:', error);
+        alert('Ошибка соединения с сервером. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
+    })
+    .finally(() => {
+        // Восстанавливаем кнопку
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    });
+}
+
+    function showModal(type) {
+        if (type === 'success') {
+            document.getElementById('successModal').style.display = 'flex';
+        } else {
+            document.getElementById('errorModal').style.display = 'flex';
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+        document.getElementById('errorModal').style.display = 'none';
+    }
+
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        const successModal = document.getElementById('successModal');
+        const errorModal = document.getElementById('errorModal');
+        
+        if (event.target === successModal) {
+            successModal.style.display = 'none';
+        }
+        if (event.target === errorModal) {
+            errorModal.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>

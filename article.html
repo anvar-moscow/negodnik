@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статья - NEGODNIK</title>
+    <!-- Подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="css/style_articles.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    NEGODNIK
+                </div>
+                <div class="header-contacts">
+                    <a href="tel:+79536890711" class="header-phone">
+                        <i class="fas fa-phone"></i> +7 953 689-07-11
+                    </a>
+                    <a href="https://t.me/biletdima" class="header-telegram">
+                        <i class="fab fa-telegram"></i> @biletdima
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Секция с статьей -->
+    <section class="article-section">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-button">
+                <i class="fas fa-arrow-left"></i> Назад
+            </a>
+            <div class="article-header">
+                <h1 class="article-title" id="article-title"></h1>
+                <p class="article-date" id="article-date"></p>
+            </div>
+            <div class="article-content" id="article-content">
+                <!-- Сюда будет вставлено содержимое статьи -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Реквизиты</h3>
+                    <p>ИП Горошников Дмитрий Сергеевич</p>
+                    <p>ИНН 433803080866</p>
+                    <p>ОГРН 320435000028490</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>+7 953 689 0711</p>
+                    <p>9:00 - 19:00</p>
+                    <p>г. Киров</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p style="text-align: center; margin: 20px 0; color: white; font-family: 'Montserrat', sans-serif;">
+                    <a href="https://negodnik-help.ru/opd/opd.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Политика ОПД</a> | 
+                    <a href="https://negodnik-help.ru/opd/soglasie.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Согласие ОПД</a> | 
+                    <a href="https://negodnik-help.ru/opd/dogovor.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">Пример договора</a> | 
+                    <a href="https://negodnik-help.ru/index.html" style="color: #ffffff; text-decoration: none; transition: all 0.3s ease; padding: 5px 10px; border-radius: 3px;">На главную</a>
+                </p>
+                <p><strong>NEGODNIK © 2017-2025</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="js/data.js"></script>
+    <script src="js/article.js"></script>
+</body>
+</html>
